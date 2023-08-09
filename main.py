@@ -1,26 +1,19 @@
-class Car:
-    def __init__(self, make, model, year, driver, name):
-        self.make = make
-        self.model = model
-        self.year = year
-        self.driver = driver
-        self.name = name
-        
-    def car_stats(self):
-        print(f"Make:{self.make}, Model:{self.model}, Year:{self.year}")
+'''
+Implement a function that will flatten and sort an array of integers in ascending order, and which adheres to a functional programming paradigm.
 
-    def talk(self):
-        print(f"Hello, {self.driver}, my name is {self.name}")
+Remember, when writing in a functional style:
+Keep variables immutable
+Write only pure functions
+Remember, functions may be higher order
+'''
 
-car1 = Car("Honda", "Accord", 2022, "Colin", "Rachel")
-car2 = Car("Honda", "Civic Type R", 2023, "Jonathan", "Johann")
+def flatten_and_sort(array): # New function for a flattened and sorted array
+    flattened_and_sorted = [num for list in array for num in list] # Create a new list by iterating through the array
+    new_list = sorted(flattened_and_sorted) # Applied sorted() function to print the new list accordingly
+    return new_list
 
-car1.talk()
-car2.talk()
+arr = [2, 10, 3], [0, 1, 9], [7, 7, 8], [2, 15, 4] # Lists of numbers to sort
+result = flatten_and_sort(arr) # Apply array to the function flatten_and_sort 
+print(result) # Print the result
 
-#car stats
-car3 = Car("Honda", "Civic", 2020)
-car4 = Car("Acura", "Integra Type S", 2024)
 
-car3.car_stats()
-car4.car_stats()
