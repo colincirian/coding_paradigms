@@ -17,3 +17,27 @@ result = flatten_and_sort(arr) # Apply array to the function flatten_and_sort
 print(result) # Print the result
 
 
+class Podracer: # Podracer class with max_speed, condition and price defined.
+    def __init__(self, max_speed, condition, price):
+        self.max_speed = max_speed
+        self.condition = condition
+        self.price = price
+
+    def repair(self):
+        self.condition = "repaired"
+
+class AnakinsPod(Podracer): # New class that inherits the Podracer class.
+    def __init__(self, max_speed, condition, price):
+        super.init(max_speed, condition, price)
+
+
+    def boost(self): # Boost function that increases speed by 2x.
+        self.max_speed *= 2
+
+class SebulbasPod(AnakinsPod): # New class that inherits the -AnkinsPod class.
+    def __init__(self, max_speed, condition, price):
+        super.init(max_speed, condition, price)
+
+    def flame_jet(self, other):
+        other.condition = "trashed"
+
